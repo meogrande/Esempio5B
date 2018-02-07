@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         // Recupero il puntatore all'elemento grafico
         button = (Button) findViewById(R.id.grecoButton);
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
