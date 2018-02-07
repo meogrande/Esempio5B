@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Recupero il puntatore all'elemento grafico
-        button = (Button) findViewById(R.id.grecoButton);
-
+        button = findViewById(R.id.grecoButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
