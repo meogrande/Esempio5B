@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
-
+    int x = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Boh","tasto premuto");
-                Toast t=  Toast.makeText(getApplicationContext(),"Tasto premuto",Toast.LENGTH_LONG);
+                Log.d("Boh",getString(R.string.saluto_toast));
+                x++;
+                Toast t=  Toast.makeText(getApplicationContext(),""+x,Toast.LENGTH_SHORT);
                 t.show();
             }
         });

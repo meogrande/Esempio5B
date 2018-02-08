@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Esempio 5B</string>
+    <string name="app_name">Example 5B</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="saluto_toast">Tasto premuto</string>
+    <string name="button">Button</string>
 </resources>

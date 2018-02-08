@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Example 5B</string>
+    <string name="hello_world">Bonjour Monde</string>
+    <string name="saluto_toast">aada</string>
+    <string name="button">Button</string>
+</resources>
