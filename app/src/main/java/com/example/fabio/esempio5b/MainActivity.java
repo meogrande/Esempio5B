@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(savedInstanceState!=null) {
+            x = savedInstanceState.getInt("numero");
+        }
+
         // Recupero il puntatore all'elemento grafico
         button = findViewById(R.id.grecoButton);
 
@@ -32,8 +36,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        System.out.println("ciao");
+    protected void onPause() {
+        super.onPause();
+        Log.i("ciclo di vita", "onPause");
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("ciclo di vita", "onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("ciclo di vita", "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("ciclo di vita", "onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("ciclo di vita", "onResume");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("ciclo di vita", "onDestroy");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("numero", x);
+        super.onSaveInstanceState(outState);
+    }
+
+
 }
