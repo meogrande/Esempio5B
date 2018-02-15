@@ -1,11 +1,14 @@
 package com.example.fabio.esempio5b;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sp = getSharedPreferences("configurazione", MODE_PRIVATE);
+        System.out.println("L'ultimo valore salvato è: " + sp.getInt("x", 0));
+        System.out.println("Nella data: " + sp.getString("data",""));
+
 
         if(savedInstanceState!=null) {
             x = savedInstanceState.getInt("numero");
@@ -32,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 t.show();
             }
         });
-
     }
 
     @Override
@@ -50,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        SharedPreferences.Editor editor = getSharedPreferences("configurazione", MODE_PRIVATE).edit();
+        editor.putInt("x",x);
+        editor.putString("data", Calendar.getInstance().getTime().toString());
+        editor.apply();
+
         Log.i("ciclo di vita", "onStop");
     }
 
