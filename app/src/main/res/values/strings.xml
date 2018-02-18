@@ -4,4 +4,5 @@
     <string name="saluto_toast">Tasto premuto</string>
     <string name="button">Button</string>
     <string name="name">Name</string>
+    <string name="title_activity_seconda">SecondaActivity</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.fabio.esempio5b;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
                 x++;
                 Toast t=  Toast.makeText(getApplicationContext(),""+x,Toast.LENGTH_SHORT);
                 t.show();
+            }
+        });
+
+        Button b = findViewById(R.id.buttonVaiA);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SecondaActivity.class);
+                i.putExtra("x",x);
+                startActivity(i);
             }
         });
     }
